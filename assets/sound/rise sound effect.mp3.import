@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5751cq5jk10u"
+path="res://.godot/imported/rise sound effect.mp3-586fb8cf6dcfd92494865515638e7506.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/rise sound effect.mp3"
+dest_files=["res://.godot/imported/rise sound effect.mp3-586fb8cf6dcfd92494865515638e7506.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

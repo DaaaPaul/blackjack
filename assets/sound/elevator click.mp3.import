@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1kmxkkyfym3y"
+path="res://.godot/imported/elevator click.mp3-cf24ba07cb8ba346356cc39486475319.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/elevator click.mp3"
+dest_files=["res://.godot/imported/elevator click.mp3-cf24ba07cb8ba346356cc39486475319.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

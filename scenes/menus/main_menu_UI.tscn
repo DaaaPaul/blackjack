@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk1qgrc5ppls2"]
+
+[ext_resource type="FontFile" uid="uid://dvwes1drgsgq4" path="res://assets/table and other/ragfile/Ragfile.ttf" id="1_hr50h"]
+[ext_resource type="Script" uid="uid://k2y1f5dwvids" path="res://scripts/main_menu_ui.gd" id="1_tjwau"]
+[ext_resource type="AudioStream" uid="uid://b5751cq5jk10u" path="res://assets/sound/rise sound effect.mp3" id="2_npcy2"]
+[ext_resource type="Script" uid="uid://5mb0puetr8yc" path="res://scripts/button_hover.gd" id="3_l77l2"]
+[ext_resource type="AudioStream" uid="uid://d1kmxkkyfym3y" path="res://assets/sound/elevator click.mp3" id="4_766x6"]
+[ext_resource type="Script" uid="uid://b0k1vrbi03fvv" path="res://scripts/button_click.gd" id="5_tjwau"]
+
+[node name="Main Menu UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjwau")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 915.0
+offset_bottom = 278.0
+scale = Vector2(1.4, 1.16)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 750
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.603612, 1, 0.573065, 1)
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("1_hr50h")
+theme_override_font_sizes/font_size = 50
+text = "play"
+alignment = 0
+
+[node name="Shop" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.603922, 1, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("1_hr50h")
+theme_override_font_sizes/font_size = 50
+text = "shop"
+alignment = 0
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.603922, 1, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("1_hr50h")
+theme_override_font_sizes/font_size = 50
+text = "settings"
+alignment = 0
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.603922, 1, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0.772549, 0, 1)
+theme_override_fonts/font = ExtResource("1_hr50h")
+theme_override_font_sizes/font_size = 50
+text = "quit"
+alignment = 0
+
+[node name="button hover" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer"]
+stream = ExtResource("2_npcy2")
+volume_db = -10.0
+pitch_scale = 4.0
+script = ExtResource("3_l77l2")
+
+[node name="button click" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer"]
+stream = ExtResource("4_766x6")
+script = ExtResource("5_tjwau")
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/button hover" method="_on_play_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/button click" method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Shop" to="MarginContainer/VBoxContainer/button hover" method="_on_shop_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Shop" to="MarginContainer/VBoxContainer/button click" method="_on_shop_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Settings" to="MarginContainer/VBoxContainer/button hover" method="_on_settings_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="MarginContainer/VBoxContainer/button click" method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="MarginContainer/VBoxContainer/button hover" method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="MarginContainer/VBoxContainer/button click" method="_on_quit_pressed"]
