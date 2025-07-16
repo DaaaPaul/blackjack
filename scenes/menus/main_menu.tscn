@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://8lanwwg6t7m"]
+
+[ext_resource type="Script" uid="uid://bl18jkf08cugi" path="res://scripts/main_menu.gd" id="1_imvie"]
+[ext_resource type="PackedScene" uid="uid://dk1qgrc5ppls2" path="res://scenes/menus/main_menu_UI.tscn" id="2_ng0o5"]
+[ext_resource type="PackedScene" uid="uid://cr5p8ryb2b648" path="res://assets/table and other/blackjack_table.glb" id="3_8r73w"]
+[ext_resource type="PackedScene" uid="uid://ysp7wuueir74" path="res://assets/table and other/blackjack.blend" id="4_1hnlc"]
+[ext_resource type="AudioStream" uid="uid://dnno0gvmvt3s0" path="res://assets/sound/menu music.mp3" id="5_50h1w"]
+[ext_resource type="AudioStream" uid="uid://cv1uehkhucka8" path="res://assets/sound/Thump.mp3" id="6_ng0o5"]
+
+[sub_resource type="Environment" id="Environment_gwb7f"]
+background_mode = 1
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_imvie")
+
+[node name="MainMenuUI" parent="." instance=ExtResource("2_ng0o5")]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0, 1.164, 1.708)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 2, 0.0473194)
+light_color = Color(1, 1, 0.784314, 1)
+light_energy = 0.85
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, 0, 1.37222, 0.548582)
+light_energy = 0.0
+light_size = 0.1
+light_specular = 3.0
+
+[node name="Table" parent="." instance=ExtResource("3_8r73w")]
+
+[node name="Blackjack" parent="." instance=ExtResource("4_1hnlc")]
+unique_name_in_owner = true
+transform = Transform3D(0.338202, 0, -0.0901085, 0, 0.35, 0, 0.0901085, 0, 0.338202, -0.461871, 0.877879, 1.40321)
+
+[node name="BGSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 4.50124e-14, 8.74229e-08, 7.57104e-08, -0.5, 0.866025, 4.37115e-08, 0.866025, 0.5, 0, 1.61572, 2.00829)
+stream = ExtResource("5_50h1w")
+volume_db = -25.0
+emission_angle_enabled = true
+
+[node name="ThumpSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.934602, 0.355694, 0, -0.355694, -0.934602, 0, 1.1053, 0.439028)
+stream = ExtResource("6_ng0o5")
+volume_db = -10.0
+pitch_scale = 0.75
+emission_angle_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gwb7f")
+
+[connection signal="play" from="." to="." method="_play"]
+[connection signal="start" from="MainMenuUI" to="." method="_on_start"]

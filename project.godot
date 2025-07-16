@@ -13,7 +13,7 @@ config_version=5
 config/name="Blackjack"
 run/main_scene="uid://8lanwwg6t7m"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://b3wu62531if5f"
 
 [display]
 
@@ -27,3 +27,4 @@ project/assembly_name="Blackjack"
 [rendering]
 
 renderer/rendering_method="mobile"
+viewport/hdr_2d=true
