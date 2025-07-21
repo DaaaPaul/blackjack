@@ -30,10 +30,10 @@ offset_right = 190.5
 offset_bottom = -162.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.992469, 0.789137, 0.745257, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_npcy2")
 theme_override_font_sizes/font_size = 24
-text = "- -   press   any   key   to   start  - -"
+text = "p     r     e     s     s          a     n     y          k     e     y          t     o          s     t     a     r     t"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxd7hhadcsl8j"]
+[gd_scene load_steps=5 format=3 uid="uid://bxd7hhadcsl8j"]
 
+[ext_resource type="Script" uid="uid://1pr7n7nescre" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cr5p8ryb2b648" path="res://assets/table and other/blackjack_table.glb" id="1_uwrxv"]
+[ext_resource type="AudioStream" uid="uid://dnno0gvmvt3s0" path="res://assets/sound/menu music.mp3" id="3_lnu2h"]
 
 [sub_resource type="Environment" id="Environment_yqjtg"]
 background_mode = 1
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_iywne")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 2, 0.0473194)
@@ -27,3 +30,10 @@ environment = SubResource("Environment_yqjtg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.777146, -0.412042, 0.475674, 0, 0.755853, 0.654741, -0.62932, -0.508829, 0.587408, 0.431, 1.192, 1.711)
+
+[node name="BGSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.371594, 1.6647, 1.70783)
+stream = ExtResource("3_lnu2h")
+volume_db = -30.0
+emission_angle_enabled = true

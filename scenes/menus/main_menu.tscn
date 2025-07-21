@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dk1qgrc5ppls2" path="res://scenes/menus/main_menu_UI.tscn" id="2_ng0o5"]
 [ext_resource type="PackedScene" uid="uid://cr5p8ryb2b648" path="res://assets/table and other/blackjack_table.glb" id="3_8r73w"]
 [ext_resource type="PackedScene" uid="uid://ysp7wuueir74" path="res://assets/table and other/blackjack.blend" id="4_1hnlc"]
-[ext_resource type="AudioStream" uid="uid://dnno0gvmvt3s0" path="res://assets/sound/menu music.mp3" id="5_50h1w"]
+[ext_resource type="AudioStream" uid="uid://xxkei887oyc0" path="res://assets/sound/main menu unfaded.mp3" id="5_ng0o5"]
 [ext_resource type="AudioStream" uid="uid://cv1uehkhucka8" path="res://assets/sound/Thump.mp3" id="6_ng0o5"]
 
 [sub_resource type="Environment" id="Environment_gwb7f"]
@@ -42,20 +42,19 @@ transform = Transform3D(0.338202, 0, -0.0901085, 0, 0.35, 0, 0.0901085, 0, 0.338
 [node name="BGSound" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-1, 4.50124e-14, 8.74229e-08, 7.57104e-08, -0.5, 0.866025, 4.37115e-08, 0.866025, 0.5, 0, 1.61572, 2.00829)
-stream = ExtResource("5_50h1w")
-volume_db = -25.0
-emission_angle_enabled = true
-
-[node name="ThumpSound" type="AudioStreamPlayer3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -0.934602, 0.355694, 0, -0.355694, -0.934602, 0, 1.1053, 0.439028)
-stream = ExtResource("6_ng0o5")
-volume_db = -10.0
-pitch_scale = 0.75
+stream = ExtResource("5_ng0o5")
+volume_db = -20.0
 emission_angle_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gwb7f")
+
+[node name="ThumpSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.934602, 0.355694, 0, -0.355694, -0.934602, 0, 1.0369, 0.580695)
+stream = ExtResource("6_ng0o5")
+volume_db = -10.0
+pitch_scale = 0.75
 
 [connection signal="play" from="." to="." method="_play"]
 [connection signal="start" from="MainMenuUI" to="." method="_on_start"]
