@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6yu8d3yun1xx"
 path.s3tc="res://.godot/imported/casino bg.jpg-cb6b6d59e7004ab636d1965d028ec9c9.s3tc.ctex"
+path.etc2="res://.godot/imported/casino bg.jpg-cb6b6d59e7004ab636d1965d028ec9c9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/table and other/casino bg.jpg"
-dest_files=["res://.godot/imported/casino bg.jpg-cb6b6d59e7004ab636d1965d028ec9c9.s3tc.ctex"]
+dest_files=["res://.godot/imported/casino bg.jpg-cb6b6d59e7004ab636d1965d028ec9c9.s3tc.ctex", "res://.godot/imported/casino bg.jpg-cb6b6d59e7004ab636d1965d028ec9c9.etc2.ctex"]
 
 [params]
 

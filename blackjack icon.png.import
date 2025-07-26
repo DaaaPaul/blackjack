@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3wu62531if5f"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+uid="uid://cdb1ckbfiseka"
+path="res://.godot/imported/blackjack icon.png-a9e57013593ecaf5b1f6a4a2ac6df550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+source_file="res://blackjack icon.png"
+dest_files=["res://.godot/imported/blackjack icon.png-a9e57013593ecaf5b1f6a4a2ac6df550.ctex"]
 
 [params]
 

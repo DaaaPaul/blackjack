@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yw46ahyvrh4k"
+path="res://.godot/imported/power down.mp3-d30d7343e58cff01507e50e3072268c1.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/power down.mp3"
+dest_files=["res://.godot/imported/power down.mp3-d30d7343e58cff01507e50e3072268c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

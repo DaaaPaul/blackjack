@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://8lanwwg6t7m"]
+[gd_scene load_steps=10 format=3 uid="uid://8lanwwg6t7m"]
 
 [ext_resource type="Script" uid="uid://bl18jkf08cugi" path="res://scripts/main_menu.gd" id="1_imvie"]
 [ext_resource type="PackedScene" uid="uid://dk1qgrc5ppls2" path="res://scenes/menus/main_menu_UI.tscn" id="2_ng0o5"]
+[ext_resource type="PackedScene" uid="uid://b820v05xcw2tc" path="res://scenes/menus/controls.tscn" id="3_1hnlc"]
 [ext_resource type="PackedScene" uid="uid://cr5p8ryb2b648" path="res://assets/table and other/blackjack_table.glb" id="3_8r73w"]
 [ext_resource type="PackedScene" uid="uid://ysp7wuueir74" path="res://assets/table and other/blackjack.blend" id="4_1hnlc"]
+[ext_resource type="PackedScene" uid="uid://062bcwmn5r4o" path="res://scenes/quit.tscn" id="4_50h1w"]
 [ext_resource type="AudioStream" uid="uid://xxkei887oyc0" path="res://assets/sound/main menu unfaded.mp3" id="5_ng0o5"]
 [ext_resource type="AudioStream" uid="uid://cv1uehkhucka8" path="res://assets/sound/Thump.mp3" id="6_ng0o5"]
 
@@ -11,10 +13,15 @@
 background_mode = 1
 
 [node name="MainMenu" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_imvie")
 
 [node name="MainMenuUI" parent="." instance=ExtResource("2_ng0o5")]
 unique_name_in_owner = true
+
+[node name="Controls" parent="." instance=ExtResource("3_1hnlc")]
+
+[node name="Quit" parent="." instance=ExtResource("4_50h1w")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -56,5 +63,5 @@ stream = ExtResource("6_ng0o5")
 volume_db = -10.0
 pitch_scale = 0.75
 
-[connection signal="play" from="." to="." method="_play"]
+[connection signal="finished_rotating" from="." to="." method="_on_finished_rotating"]
 [connection signal="start" from="MainMenuUI" to="." method="_on_start"]

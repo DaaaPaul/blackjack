@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c25r3nno4mq3o"
 path.s3tc="res://.godot/imported/blackjack_table_1.png-f77340aaffef8c0fb849473a97a3c678.s3tc.ctex"
+path.etc2="res://.godot/imported/blackjack_table_1.png-f77340aaffef8c0fb849473a97a3c678.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/table and other/blackjack_table_1.png"
-dest_files=["res://.godot/imported/blackjack_table_1.png-f77340aaffef8c0fb849473a97a3c678.s3tc.ctex"]
+dest_files=["res://.godot/imported/blackjack_table_1.png-f77340aaffef8c0fb849473a97a3c678.s3tc.ctex", "res://.godot/imported/blackjack_table_1.png-f77340aaffef8c0fb849473a97a3c678.etc2.ctex"]
 
 [params]
 

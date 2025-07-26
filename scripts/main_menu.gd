@@ -1,27 +1,26 @@
 extends Node3D
 
-signal play
 var playing := false
+signal finished_rotating
 
 func _input(event):
-	if event is InputEventMouseMotion and playing == false:
+	if event is InputEventMouseMotion and !playing:
 		%Camera3D.rotation_degrees.y -= event.relative.x * 0.005
 		%Camera3D.rotation_degrees.x -= event.relative.y * 0.005
 		%Camera3D.rotation_degrees.y = clamp(%Camera3D.rotation_degrees.y, -5.0, 5.0)
 		%Camera3D.rotation_degrees.x = clamp(%Camera3D.rotation_degrees.x, -57.75, -52.75)
 
 func _process(delta: float) -> void:
-	if playing == false:
+	if !playing:
 		if !%BGSound.playing:
 			%BGSound.play()
 
-		var rand_addition := randf()
-		if(rand_addition >= 0.975):
-			%Blackjack.visible = false
-			await get_tree().create_timer(0.5).timeout
-			if(playing == false):
-				%Blackjack.visible = true
-	
+	var rand_addition := randf()
+	if rand_addition >= 0.97:
+		%Blackjack.visible = false
+		await get_tree().create_timer(0.035).timeout
+		if !playing:
+			%Blackjack.visible = true
 		
 func _on_start() -> void:
 	playing = true
@@ -42,10 +41,9 @@ func _on_start() -> void:
 		%Camera3D.rotation_degrees.y += y_rot_diff / 100.0
 		%BGSound.volume_db -= 0.3
 		await get_tree().create_timer(0.01).timeout
-	
-	play.emit()
+	finished_rotating.emit()
 
-func _play() -> void:
+func _on_finished_rotating() -> void:
 	%SpotLight3D.light_energy = 2.0
 	%ThumpSound.play()
 	await %ThumpSound.finished

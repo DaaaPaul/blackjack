@@ -15,8 +15,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tjwau")
 
-[node name="PressAnyKey" type="Label" parent="."]
+[node name="Text" type="Label" parent="."]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 top_level = true
 layout_mode = 1
 anchors_preset = 7
@@ -32,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_npcy2")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "p     r     e     s     s          a     n     y          k     e     y          t     o          s     t     a     r     t"
 horizontal_alignment = 1
 vertical_alignment = 1
